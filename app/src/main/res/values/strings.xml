@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Control Panel</string>
+    <string name="master">Master</string>
+    <string name="start_stop">Start/Stop</string>
+    <string name="current_onoff">Current On/Off</string>
+    <string name="reset">Reset</string>
+    <string name="get">GET</string>
+    <string name="set">SET</string>
+    <string name="current">Current</string>
+    <string name="expected">Expected</string>
+    <string name="fb">FB</string>
+    <string name="ma">ma</string>
+    <string name="hz">Hz</string>
+    <string name="go">GO</string>
+    <string name="ch1_freq">CH1_Freq</string>
+    <string name="ch2_freq">CH2_Freq</string>
+    <string name="readings_calculations">Readings &amp; Calculations</string>
+    <string name="beat_calc">Beat_calc</string>
+    <string name="beat_sensor">Beat_sensor</string>
+    <string name="electrode_resistance">Electrode\nResistance</string>
+    <string name="electrode_voltage">Electrode\nVoltage</string>
+    <string name="electrode_charge">Electrode\nCharge</string>
+    <string name="audio">Audio:</string>
+    <string name="left">L</string>
+    <string name="right">R</string>
+    <string name="beat">Beat</string>
+    <string name="ohm">Ohm</string>
+    <string name="mv">mv</string>
+</resources>

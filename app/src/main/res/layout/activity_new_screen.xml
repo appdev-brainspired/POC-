@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Master Section with Light Blue Background -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#E6E6FA"
+            android:padding="16dp"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btn_start_stop"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:text="Start/\nStop"
+                android:background="@drawable/round_button"
+                android:layout_margin="8dp"
+                android:backgroundTint="#90EE90"/>
+
+            <Button
+                android:id="@+id/btn_current"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:text="Current\nOn/Off"
+                android:background="@drawable/round_button"
+                android:layout_margin="8dp"
+                android:backgroundTint="#90EE90"/>
+
+            <Button
+                android:id="@+id/btn_reset"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:text="Reset"
+                android:background="@drawable/round_button"
+                android:layout_margin="8dp"
+                android:backgroundTint="#90EE90"/>
+        </LinearLayout>
+
+        <!-- GET and SET Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp">
+
+            <!-- GET Section -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="GET"
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
+
+                <!-- Current -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="Current"/>
+
+                    <EditText
+                        android:id="@+id/current_value"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:hint="value"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ma"
+                        android:layout_marginStart="4dp"/>
+                </LinearLayout>
+
+                <!-- Expected -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="Expected"/>
+
+                    <EditText
+                        android:id="@+id/expected_value"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:hint="value"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ma"
+                        android:layout_marginStart="4dp"/>
+                </LinearLayout>
+
+                <!-- FB -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="FB"/>
+
+                    <EditText
+                        android:id="@+id/fb_value"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:hint="value"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ma"
+                        android:layout_marginStart="4dp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- SET Section -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SET"
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
+
+                <!-- SET Controls -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="8dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/set_value"
+                            android:layout_width="60dp"
+                            android:layout_height="wrap_content"
+                            android:hint="value"/>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginStart="8dp">
+
+                            <ImageButton
+                                android:id="@+id/btn_up"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/ic_arrow_up"
+                                android:background="@drawable/grey_button"/>
+
+                            <Button
+                                android:id="@+id/btn_go"
+                                android:layout_width="40dp"
+                                android:layout_height="wrap_content"
+                                android:text="GO"/>
+
+                            <ImageButton
+                                android:id="@+id/btn_down"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/ic_arrow_down"
+                                android:background="@drawable/grey_button"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Frequency Controls -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp">
+
+            <!-- GET Frequencies -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <!-- CH1_Freq -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="CH1_Freq"/>
+
+                    <EditText
+                        android:id="@+id/ch1_freq_value"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:hint="value"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hz"
+                        android:layout_marginStart="4dp"/>
+                </LinearLayout>
+
+                <!-- CH2_Freq -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="CH2_Freq"/>
+
+                    <EditText
+                        android:id="@+id/ch2_freq_value"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:hint="value"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hz"
+                        android:layout_marginStart="4dp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- SET Frequencies -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginTop="8dp">
+
+                <!-- CH1 Controls -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+
+                    <EditText
+                        android:id="@+id/set_ch1_freq"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:hint="value"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="8dp">
+
+                        <ImageButton
+                            android:id="@+id/ch1_up"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_arrow_up"
+                            android:background="@drawable/grey_button"/>
+
+                        <Button
+                            android:id="@+id/ch1_go"
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content"
+                            android:text="GO"/>
+
+                        <ImageButton
+                            android:id="@+id/ch1_down"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_arrow_down"
+                            android:background="@drawable/grey_button"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- CH2 Controls -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/set_ch2_freq"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:hint="value"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="8dp">
+
+                        <ImageButton
+                            android:id="@+id/ch2_up"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_arrow_up"
+                            android:background="@drawable/grey_button"/>
+
+                        <Button
+                            android:id="@+id/ch2_go"
+                            android:layout_width="40dp"
+                            android:layout_height="wrap_content"
+                            android:text="GO"/>
+
+                        <ImageButton
+                            android:id="@+id/ch2_down"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@drawable/ic_arrow_down"
+                            android:background="@drawable/grey_button"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Readings & Calculations Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Readings &amp; Calculations"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Beat Calculations -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Beat_calc"/>
+
+            <EditText
+                android:id="@+id/beat_calc"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:hint="value"
+                android:layout_marginStart="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hz"
+                android:layout_marginStart="4dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Beat_sensor"
+                android:layout_marginStart="16dp"/>
+
+            <EditText
+                android:id="@+id/beat_sensor"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:hint="value"
+                android:layout_marginStart="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hz"
+                android:layout_marginStart="4dp"/>
+        </LinearLayout>
+
+        <!-- Electrode Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Electrode\nResistance"/>
+
+                <EditText
+                    android:id="@+id/electrode_resistance"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:hint="value"
+                    android:layout_marginStart="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ohm"
+                    android:layout_marginStart="4dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Electrode\nVoltage"
+                    android:layout_marginStart="16dp"/>
+
+                <EditText
+                    android:id="@+id/electrode_voltage"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:hint="value"
+                    android:layout_marginStart="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="mv"
+                    android:layout_marginStart="4dp"/>
+            </LinearLayout>
+
+            <!-- Electrode Charge -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Electrode\nCharge"/>
+
+                <EditText
+                    android:id="@+id/electrode_charge"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:hint="value"
+                    android:layout_marginStart="8dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="mv"
+                    android:layout_marginStart="4dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Audio Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Audio: L"/>
+
+            <EditText
+                android:id="@+id/audio_l"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:hint="value"
+                android:layout_marginStart="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hz"
+                android:layout_marginStart="4dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="R"
+                android:layout_marginStart="16dp"/>
+
+            <EditText
+                android:id="@+id/audio_r"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:hint="value"
+                android:layout_marginStart="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hz"
+                android:layout_marginStart="4dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Beat"
+                android:layout_marginStart="16dp"/>
+
+            <EditText
+                android:id="@+id/audio_beat"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:hint="value"
+                android:layout_marginStart="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hz"
+                android:layout_marginStart="4dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
